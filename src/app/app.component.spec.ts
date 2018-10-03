@@ -1,27 +1,30 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
+
+
 import { AppComponent } from './app.component';
+
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  let component:AppComponent;
+  let fixture:ComponentFixture<AppComponent>
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
-  }));
+    })
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   }));
-  it(`should have as title 'flixenwork'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('flixenwork');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to flixenwork!');
-  }));
+  it('should contain a router outlet directive', () => {
+    let debugElement = fixture.debugElement.query(By.directive(RouterOutlet));
+
+    expect(debugElement).not.toBeNull();
+  });
 });

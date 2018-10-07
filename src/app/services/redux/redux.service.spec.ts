@@ -38,15 +38,4 @@ describe('ReduxService', () => {
 
     expect(spy).toHaveBeenCalledWith(reducer, state);
   }));
-  it('should call combineReducers method of redux', inject([ReduxService], (service: ReduxService) => {
-    let reducers = {
-      1: () => {},
-      2: () => {}
-    }
-    let spy = spyOn(combineReducers).and.callFake(() => {});
-
-    service.combineReducers(reducers);
-
-    expect(spy).toHaveBeenCalledWith(reducers);
-  }));
 });

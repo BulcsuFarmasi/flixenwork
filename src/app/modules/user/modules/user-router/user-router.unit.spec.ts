@@ -1,7 +1,7 @@
 import { Route } from "@angular/router";
 
 
-import { userRoutes } from "./user-router-module.module";
+import { userRoutes } from "./user-router.module";
 import { LogInComponent } from "../../components/log-in/log-in.component";
 
 describe('UserRoutes', () => {

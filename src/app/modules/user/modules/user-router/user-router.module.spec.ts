@@ -1,10 +1,10 @@
-import { UserRouterModuleModule } from './user-router-module.module';
+import { UserRouterModule } from './user-router.module';
 
-describe('UserRouterModuleModule', () => {
-  let userRouterModuleModule: UserRouterModuleModule;
+describe('UserRouterModule', () => {
+  let userRouterModuleModule: UserRouterModule;
 
   beforeEach(() => {
-    userRouterModuleModule = new UserRouterModuleModule();
+    userRouterModuleModule = new UserRouterModule();
   });
 
   it('should create an instance', () => {

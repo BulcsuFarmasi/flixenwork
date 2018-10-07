@@ -13,4 +13,4 @@ export const userRoutes:Routes = [
   declarations: [],
   exports:[RouterModule]
 })
-export class UserRouterModuleModule { }
+export class UserRouterModule { }

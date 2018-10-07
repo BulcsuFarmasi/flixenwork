@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor(private angularFireAuth:AngularFireAuth) { }
+
+  signIn (user) {
+    this.angularFireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+  }
+
+  logIn (user) {
+    this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+  }
 }

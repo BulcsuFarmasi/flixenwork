@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 
-import { firebaseOptions } from '../../app.module';
+import { firebaseOptions } from '../../../firebase-options';
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {

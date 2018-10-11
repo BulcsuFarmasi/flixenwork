@@ -23,7 +23,7 @@ export function logInError (state:UserState, action):UserState {
 }
 
 export function logInSuccess (state:UserState, action):UserState {
-
+    return tassign(state, { user: action.user })
 }
 
 export function userReducer (state:UserState = INITIAL_USER_STATE, action):UserState {

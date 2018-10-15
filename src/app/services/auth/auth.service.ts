@@ -11,6 +11,6 @@ export class AuthService {
   }
 
   logIn (user) {
-    this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+    return this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
   }
 }

@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { UserModule } from './modules/user/user.module';
 import { RoutingModule } from './modules/routing/routing.module';
 import { firebaseOptions } from '../firebase-options';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

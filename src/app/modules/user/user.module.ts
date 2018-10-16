@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -10,6 +11,7 @@ import { AuthService } from '../../services/auth/auth.service';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     AngularFireAuthModule,
     UserRouterModule
   ],

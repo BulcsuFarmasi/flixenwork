@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthService } from '../../../../services/auth/auth.service';
+import { ReduxService } from '../../../../services/redux/redux.service';
+import { LOG_IN_ERROR, LOG_IN_SUCCESS } from '../../actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -8,14 +12,19 @@ import { AuthService } from '../../../../services/auth/auth.service';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private reduxService:ReduxService, private router:Router) { }
 
   ngOnInit() {
   }
 
   logIn (form) {
-     this.authService.logIn(form.value).then(value => {
-       console.log(value);
+     this.authService.logIn(form.value).then((value:any) => {
+       if(value.code) {
+          this.reduxService.dispatch({ type: LOG_IN_ERROR })
+       } else {
+          this.reduxService.dispatch({ type: LOG_IN_SUCCESS, user: value.user })
+          this.router.navigate(['/']);
+       }
      });
   }
 

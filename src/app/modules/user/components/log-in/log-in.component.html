@@ -1,5 +1,5 @@
 <h2>Bejelentkezés</h2>
-<form #form (ngSubmit)="logIn(form)">
+<form #form="ngForm" (ngSubmit)="logIn(form)">
   <p>
     <label for="email">E-mail</label><br>
     <input type="email" ngModel name="email" id="email">
